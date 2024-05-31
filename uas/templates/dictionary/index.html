@@ -1,0 +1,515 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    />
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+          }
+    
+          .container {
+            text-align: center;
+          }
+    
+          .section1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+          }
+    
+          .div8 {
+            position: relative;
+            width: 700px;
+            display: flex;
+            align-items: center;
+          }
+    
+          .input {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            font-weight: 500;
+            font-family: var(--font-montserrat);
+            font-size: var(--font-size-mini);
+            background-color: transparent;
+            height: 20px;
+            line-height: 20px;
+            color: var(--color-rosybrown);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            z-index: 2;
+            width: 100%;
+            height: 50px; /* Изменено для адекватного отображения */
+            border: 0;
+            outline: 0;
+            font-weight: 500;
+            font-family: var(--font-montserrat);
+            font-size: var(--font-size-mini);
+            background-color: transparent;
+            color: var(--color-rosybrown);
+            padding: 5px;
+            line-height: 1.3;
+          }
+    
+          .input::placeholder {
+            color: var(--color-gray);
+          }
+    
+          .button {
+            /* Стили для вашей кнопки поиска */
+            margin-left: 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+          }
+    
+          .button img {
+            width: 30px;
+            height: auto;
+          }
+    </style>
+  </head>
+  <body>
+    <div class="div">
+      <div class="section1">
+        <form method="post" action="{% url 'dictionary:definition' %}">
+          {% csrf_token %}
+          <div class="div8">
+            <input
+              class="input"
+              name="search_term"
+              placeholder="Введите слово, выражение, аббревиатуру"
+              type="text"
+            />
+          </div>
+          <button class="button" type="submit">
+            <img class="search-icon" alt="" src="{% static 'img/button.svg' %}" />
+          </button>
+        </form>
+      </div>
+
+      <div class="header7777">
+        <div class="divreverso-header-wrapper7777">
+          <div class="divreverso-header-left-wrappe7777">
+            <div class="nav7777">
+              <button class="link7777" id="Ractangle" onclick="{% url 'dictionary:definition' %}">
+                    <div class="div7777">Определение</div>
+              </button>
+                  
+              <button class="link17777">
+                <div class="div17777">Главная страница</div>
+              </button>
+              <button class="link27777">
+                <div class="div27777">Организации</div>
+              </button>
+              <button class="link37777" id=".link37777">
+                <div class="div37777">Поставки</div>
+              </button>
+            </div>
+          </div>
+          <div class="divreverso-header-right-wrapp7777">
+            <button class="divreverso-user-menu7777" id="registerButton1">
+              <div class="divoption7777">
+                <div class="div47777">Войти</div>
+              </div>
+            </button>
+            <button class="divreverso-user-menu17777">
+              <div class="divoption17777">
+                <div class="div57777">Скачайте мобильную версию</div>
+              </div>
+              <img class="download-icon7777" alt="" src="{% static 'img/download.svg' %}" />
+            </button>
+            <button class="divoption-wrapper7777">
+              <div class="divoption27777">
+                <div class="ru7777">ru</div>
+              </div>
+              <img class="vector-icon1" alt="" src="{% static 'img/vector1.svg' %}" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <img class="icon" alt="" src="{% static 'css/public/-20240319-234849894-1.svg' %}" />
+
+      <div class="divwrapper">
+        <b class="heading-1">Переводите термины и выражения</b>
+        <div class="heading-11">в области беспилотных авиационных систем</div>
+        <div class="heading-12">
+          <div class="image-fill"></div>
+        </div>
+        <img class="vector-icon1" alt="" src="{% static 'img/vector.svg' %}" />
+
+        <button class="section">
+          <div class="spanoption">
+            <img class="spanflag-icon" alt="" src="{% static 'css/public/spanflag@2x.png' %}" />
+
+            <div class="spanlang-name">
+              <div class="div7">русский</div>
+            </div>
+          </div>
+          <div class="spansel-arrow"></div>
+          <img
+            class="chevron-down-icon"
+            alt=""
+            src="{% static "css/public/chevrondown.svg" %}"
+          />
+        </button>
+
+
+        <button class="section-link">
+          <img
+            class="book-open-text-icon"
+            alt=""
+            src="{% static "css/public/bookopentext.svg" %}"
+          />
+        </button>
+        <div class="section-link1">Мой Словарь</div>
+        <button class="section-link2">
+          <img class="history-icon" alt="" src="{% static "img/history.svg" %}" />
+        </button>
+        <div class="section-link3">История</div>
+        <button class="section-link4">
+          <img class="image-1-icon" alt="" src="{% static "css/public/image-1@2x.png" %}" />
+        </button>
+        <div class="section-link5">Цепочка поставок</div>
+        <button class="section-link6">
+          <img class="bar-chart-4-icon" alt="" src="{% static "css/public/barchart4.svg" %}" />
+        </button>
+        <div class="section-link7">Анализ</div>
+        <div class="section2">
+          <div class="link-container">
+            <span class="txt">
+              <span>Скачать наше </span>
+              <span class="span">бесплатное</span>
+            </span>
+          </div>
+          <div class="link4">приложение</div>
+          <button class="link-google-play">
+            <img class="rusvg-fill-icon" alt="" src="{% static "css/public/rusvg-fill.svg" %}" />
+          </button>
+          <button class="link-app-store">
+            <img
+              class="rusvg-fill-icon"
+              alt=""
+              src="{% static "css/public/rusvg-fill1.svg" %}"
+            />
+          </button>
+        </div>
+        <div class="section3">
+          <div class="link-google-play1"></div>
+        </div>
+        <div class="section4">
+          <div class="heading-2">
+            <div class="div9">
+              Получите перевод тысяч терминов и выражений в области
+              беспилотников благодаря
+            </div>
+            <div class="div10">
+              нашей технологии поиска на основе большого количества пятиязычных
+              данных.
+            </div>
+          </div>
+          <div class="divencourage-content">
+            <div class="spantext">
+              <div class="div11">
+                Зарегистрируйтесь на сайте бесплатно, чтобы
+              </div>
+              <div class="div12">использовать сохранения в истории поиска</div>
+              <div class="div13">и добавлять избранное в Словарь.</div>
+            </div><!--
+            <button class="link5">
+              <div class="div14">Зарегистрироваться</div>
+              <img class="user-icon" alt="" src="./public/user.svg" />
+            </button>-->
+            <button class="link5" id="registerButton2"> 
+              <div class="div14">Зарегистрироваться</div> 
+              <img class="user-icon" alt="" src="{% static "css/public/user.svg" %}" /> 
+           </button>
+                   
+          </div>
+        </div>
+        <img class="arrow-right-icon" alt="" src="{% static "css/public/arrowright.svg" %}" />
+
+        <div class="div15">БАС+</div>
+        <div class="div16">БАС+</div>
+        <div class="aside">
+          <div class="link6">
+            <div class="divdapp-content">
+              <div class="ptitle">
+                <b class="b">
+                  <p class="p">Больше возможностей</p>
+                  <p class="p">с подпиской БАС+</p>
+                </b>
+              </div>
+              <div class="divdapp-args">
+                <div class="p2">
+                  <div class="div17">Неограниченное количество запросов</div>
+                  <div class="icon1">
+                    <img
+                      class="vector-icon2"
+                      alt=""
+                      src="{% static "css/public/vector2.svg" %}"
+                    />
+                  </div>
+                </div>
+                <div class="p3">
+                  <div class="icon2">
+                    <img
+                      class="vector-icon2"
+                      alt=""
+                      src="{% static "css/public/vector2.svg" %}"
+                    />
+                  </div>
+                  <div class="div17">Построение цепочки поставок</div>
+                </div>
+                <div class="p3">
+                  <div class="icon2">
+                    <img
+                      class="vector-icon2"
+                      alt=""
+                      src="{% static "css/public/vector2.svg" %}"
+                    />
+                  </div>
+                  <div class="div17">Развернутый аналитический отчет</div>
+                </div>
+                <div class="p3">
+                  <div class="icon2">
+                    <img
+                      class="vector-icon2"
+                      alt=""
+                      src="{% static "css/public/vector2.svg" %}"
+                    />
+                  </div>
+                  <div class="div17">Инфографика</div>
+                </div>
+                <div class="p3">
+                  <div class="icon2">
+                    <img
+                      class="vector-icon2"
+                      alt=""
+                      src="{% static "css/public/vector2.svg" %}"
+                    />
+                  </div>
+                  <div class="div17">Никакой рекламы</div>
+                </div>
+              </div>
+              <div class="divdapp-button-wrappermargin">
+                <button class="button1">
+                  <div class="div22">Оформить подписку БАС+</div>
+                </button>
+              </div>
+            </div>
+            <div class="divdapp-banner-home-right"></div>
+            <img class="icon6" alt="" src="{% static "css/public/@2x.png" %}" />
+
+            <img class="icon7" alt="" src="{% static "css/public/1@2x.png" %}" />
+
+            <b class="b1">Наши партнеры и эксперты</b>
+            <img class="image-6-icon" alt="" src="{% static "css/public/image-6@2x.png" %}" />
+          </div>
+        </div>
+        <div class="section5">
+          <div class="div23">Тут могла быть ваша реклама</div>
+        </div>
+        <div class="divlatest-history-content">
+          <div class="heading-21">
+            <div class="div24">
+              <span class="txt">
+                <p class="p">
+                  Перевод терминов беспилотных авиационных систем Русский -
+                  Английский - Китайский и др.
+                </p>
+                <p class="p">Актуальная терминология, проверенная экспертами</p>
+                <p class="p">
+                  Определения и пояснения к терминам на русском языке
+                </p>
+                <p class="p">Примеры употребления терминов</p>
+              </span>
+            </div>
+          </div>
+          <div class="divencourage-content1">
+            <button class="link7">
+              <div class="div25">Оформить Учусь БАС+</div>
+              <img
+                class="graduation-cap-icon"
+                alt=""
+                src="{% static "css/public/graduationcap.svg" %}"
+              />
+            </button>
+            <div class="spantext1">
+              <div class="div26">Подпишись на Учусь БАС+</div>
+              <div class="div27">
+                и подготовься к экзамену по терминологии БАС
+              </div>
+              <div class="div28">на русском, английском и китайском на 5+</div>
+            </div>
+            
+            
+            <img
+              class="mouse-pointer-click-icon"
+              alt=""
+              src="{% static "css/public/mousepointerclick@2x.png" %}"
+            />
+          </div>
+          <img class="move-down-icon" alt="" src="{% static "css/public/movedown.svg" %}" />
+
+          <img
+            class="corner-left-down-icon"
+            alt=""
+            src="{% static "css/public/cornerleftdown.svg" %}"
+          />
+
+          <img
+            class="corner-left-down-icon1"
+            alt=""
+            src="{% static "css/public/cornerleftdown.svg" %}"
+          />
+
+          <img
+            class="corner-left-down-icon2"
+            alt=""
+            src="{% static "css/public/cornerleftdown.svg" %}"
+          />
+
+          <img
+            class="corner-left-down-icon3"
+            alt=""
+            src="{% static "css/public/cornerleftdown.svg" %}"
+          />
+        </div>
+        <div class="div29">Тут могла быть ваша реклама</div>
+
+        <button class="open-lang">
+          <div class="spanoption1">
+            <img class="spanflag-icon" alt="" src="{% static "css/public/spanflag1@2x.png" %}" />
+ 
+            <div class="spanlang-name1">
+              <div class="div30">английский</div>
+            </div>
+          </div>
+          <img
+            class="chevron-down-icon1"
+            alt=""
+            src="{% static "css/public/chevrondown.svg" %}"
+          />
+        </button>
+        <div class="dropdown-content" style="display: none; width: 177px; height: 236px;"></div>
+          <button class=" spanoption666 dropdown-content ">
+            <img
+              class="spanflag-icon666"
+              loading="lazy"
+              alt=""
+              src="{% static "css/public8/span.flag — копия.png" %}"
+            />
+    
+            <div class="spanlang-name666">
+              <div class="div666">Английский</div>
+            </div>
+          </button>
+          
+          <button class="chevron-down666 dropdown-content">
+            <img
+              class="vector-icon666"
+              loading="lazy"
+              alt=""
+              src="{% static "css/public8/vector.svg" %}"
+            />
+          </button>
+          
+          
+          <button class="spanoption16666 dropdown-content">
+            <img
+              class="spanflag-icon16666"
+              loading="lazy"
+              alt=""
+              src="{% static "css/public8/span.flag.png" %}"
+            />
+    
+            <div class="spanlang-name16666">
+              <div class="div16666">Английский</div>
+            </div>
+          </button>
+          
+          <button class="spanoption26666 dropdown-content">
+            <img
+              class="spanflag-icon26666"
+              loading="lazy"
+              alt=""
+              src="{% static "css/public8/span.flag-1.png" %}"
+            />
+    
+            <div class="spanlang-name26666">
+              <div class="div26666">Испанский</div>
+            </div>
+          </button>
+          
+          
+          <button class="spanoption36666 dropdown-content">
+            <img
+              class="spanflag-icon36666"
+              loading="lazy"
+              alt=""
+              src="{% static "css/public8/span.flag-2.png" %}"
+            />
+    
+            <div class="spanlang-name36666">
+              <div class="div36666">Китайский</div>
+            </div>
+          </button>
+          
+          <button class="spanoption46666 dropdown-content">
+            <img
+              class="spanflag-icon46666"
+              loading="lazy"
+              alt=""
+              src="{% static "css/public8/span.flag-3.png" %}"
+            />
+    
+            <div class="spanlang-name46666">
+              <div class="div46666">Русский</div>
+            </div>
+          </button>
+          
+          <button class="spanoption56666 dropdown-content">
+            <img
+              class="spanflag-icon56666"
+              loading="lazy"
+              alt=""
+              src="{% static "css/public8/span.flag-4.png" %}"
+            />
+    
+            <div class="spanlang-name56666">
+              <div class="div56666">Французский</div>
+            </div>
+          </button>         
+       
+        </div>
+      </div> 
+    </div>
+
+    <script src="{% static 'js/Mda.js' %}"></script>
+    <script src="{% static 'js/Whater.js' %}"></script>
+    <script src="{% static 'js/Button.js' %}"></script>
+    <!--<script src="{% static 'js/1STR.js' %}"></script>-->
+  </body>
+</html>
